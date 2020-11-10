@@ -19,11 +19,11 @@ def binary(nums,x):
     high=len(nums)-1
     while(low<=high):
         mid=(low+high)//2
-        if x>nums[mid]:
-            return mid-1
-        elif x<=nums[mid]:
+        if x==nums[mid]:
+            return mid
+        elif x<nums[mid]:
             low=mid+1
         else:
             high=mid-1
             
-print(binary([9,7,6,3,3,3,3,2,1],3))
+print(binary([9,7,6,3,2,1],7))
