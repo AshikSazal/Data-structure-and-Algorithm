@@ -38,7 +38,7 @@ ll *create_bit(ll *a,ll n)
 }
 int main()
 {
-    ll n,lb,ub;
+    ll n,lb,ub,update_val,index;
     cout<<"Enter the size : ";
     cin>>n;
     ll a[n+1];
@@ -46,6 +46,13 @@ int main()
     for(ll i=1;i<=n;i++)
         cin>>a[i];
     ll *bit=create_bit(a,n);
+    cout<<"Enter the range(a,b) : ";
+    cin>>lb>>ub;
+    cout<<get_sum(ub,bit)-get_sum(lb-1,bit)<<endl;
+    cout<<"Enter the index and update value : ";
+    cin>>index>>update_val;
+    update(bit,index,n,update_val);
+    cout<<"After update"<<endl;
     cout<<"Enter the range(a,b) : ";
     cin>>lb>>ub;
     cout<<get_sum(ub,bit)-get_sum(lb-1,bit)<<endl;
