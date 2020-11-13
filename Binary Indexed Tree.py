@@ -23,3 +23,5 @@ if __name__ == "__main__" :
     upper_bit=4
     lower_bit=2
     print(get_sum(upper_bit,bit)-get_sum(lower_bit-1,bit))
+    update(bit,1,n,9) # tree,index_no,size,value
+    print(get_sum(upper_bit,bit)-get_sum(lower_bit-1,bit))
