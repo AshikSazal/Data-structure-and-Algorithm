@@ -47,9 +47,37 @@ void detect_loop(node *s)
         }
     }
     if(found==1)
-        printf("found loop");
+        printf("Found loop\n");
     else
-        printf("not found");
+        printf("No loop detected\n");
+}
+void loop_length(node *h)
+{
+    int found=0,x=0;
+    node *f=h,*s=h;
+    while(f && s && s->next)
+    {
+        f=f->next->next;
+        s=s->next;
+        if(f==s)
+        {
+            x=1;
+            break;
+        }
+    }
+    if(x==1)
+    {
+        node *temp=s;
+        while(temp->next!=s)
+        {
+            found++;
+            temp=temp->next;
+        }
+    }
+    if(found==0)
+        printf("0");
+    else
+        printf("%d",found+1);
 }
 int main()
 {
@@ -58,8 +86,13 @@ int main()
     insert(first,1);
     insert(first,2);
     insert(first,3);
+    insert(first,4);
+    insert(first,5);
     first->next->next->next=first;
+    printf("Loop detect: ");
     detect_loop(first);
+    printf("Loop length : ");
+    loop_length(first);
     full_delete(first);
     free(first);
 }
