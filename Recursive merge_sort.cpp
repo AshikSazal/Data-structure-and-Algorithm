@@ -32,9 +32,9 @@ void MergeSort(int A[],int l,int h)
 }
 int main()
 {
-    int A[]= {11,13,7,12,16,9,24,5,10,3},n=10,i;
-    MergeSort(A,n);
-    for(i=0; i<10; i++)
+    int A[]= {5,4,3,2},n=4,i;
+    MergeSort(A,0,n-1);
+    for(i=0; i<n; i++)
         printf("%d ",A[i]);
     printf("\n");
     return 0;
