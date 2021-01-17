@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include<stdlib.h>
-
+void swap(int *x,int *y)
+{
+    int temp=*x;
+    *x=*y;
+    *y=temp;
+}
 void Merge(int A[],int l,int mid,int h)
 {
     int i=l,j=mid+1,k=l;
@@ -32,9 +37,9 @@ void MergeSort(int A[],int l,int h)
 }
 int main()
 {
-    int A[]= {5,4,3,2},n=4,i;
+    int A[]= {11,13,7,12,16,9,24,5,10,3},n=10,i;
     MergeSort(A,0,n-1);
-    for(i=0; i<n; i++)
+    for(i=0; i<10; i++)
         printf("%d ",A[i]);
     printf("\n");
     return 0;
