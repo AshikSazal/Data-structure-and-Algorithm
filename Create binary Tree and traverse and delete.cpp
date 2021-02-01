@@ -79,13 +79,13 @@ void levelOrder(struct Node* root)
 		q.pop();
 	}
 }
-void _deleteTree(Node* node)
+void deleteFullTree(Node* node)
 {
     if (node == NULL) return;
 
     /* first delete both subtrees */
-    _deleteTree(node->left);
-    _deleteTree(node->right);
+    deleteFullTree(node->left);
+    deleteFullTree(node->right);
 
     /* then delete the node */
     cout << "Deleting node: " << node->data << endl;
@@ -94,7 +94,7 @@ void _deleteTree(Node* node)
 
 void deleteTree(Node** node_ref)
 {
-    _deleteTree(*node_ref);
+    deleteFullTree(*node_ref);
     *node_ref = NULL;
 }
 int main()
